@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* ✅ 全体フォント（Inter + Noto Sans JP）へ差し替え */
+  --font-sans: var(--font-inter), var(--font-jp), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* mono は必要なら残す（使ってないなら消してOK） */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jp), sans-serif;
+}
+
+.lumi-login {
+  position: relative;
+  isolation: isolate;
+
+  /* ✅ ベースは生成り（アプリ全体と統一） */
+  background-color: #f8f1ec;
+
+  /* ✅ ピンクは“気配”として少量だけ */
+  background-image:
+    /* 上のほわっと光（白寄り） */
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 52%),
+
+    /* ピンクの気配（かなり薄く） */
+    radial-gradient(circle at 18% 18%, rgba(235, 207, 209, 0.20), rgba(235, 207, 209, 0) 42%),
+    radial-gradient(circle at 86% 20%, rgba(235, 207, 209, 0.16), rgba(235, 207, 209, 0) 44%),
+    radial-gradient(circle at 20% 86%, rgba(235, 207, 209, 0.14), rgba(235, 207, 209, 0) 46%),
+    radial-gradient(circle at 82% 86%, rgba(235, 207, 209, 0.12), rgba(235, 207, 209, 0) 48%),
+
+    /* 仕上げ：生成り→ほんのりピンク→生成り（“色”じゃなく“温度”） */
+    linear-gradient(160deg, rgba(248, 241, 236, 1) 0%, rgba(255, 241, 243, 0.35) 45%, rgba(248, 241, 236, 1) 100%);
+
+  overflow: hidden;
+}
+
+
+.lumi-login::before,
+.lumi-login::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 16%),
+    radial-gradient(circle at 76% 14%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 18%),
+    radial-gradient(circle at 86% 68%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 16%),
+    radial-gradient(circle at 22% 76%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 16%);
+  opacity: 0.7;
+  animation: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lumi-login::after {
+  opacity: 0.45;
+}
+
+.lumi-login > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lumi-logo-veil {
+  position: relative;
+}
+
+.lumi-logo-veil::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(235, 207, 209, 0.35),
+    rgba(255, 241, 243, 0.14),
+    transparent 60%
+  );
+  filter: blur(28px);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lumi-logo-veil > img {
+  position: relative;
+  z-index: 1;
+}
+
+.lumi-logo-veil > img {
+  position: relative;
+  z-index: 1;
+}
+
+.lumi-reveal-title,
+.lumi-reveal-body {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: lumi-text-reveal 0.7s ease forwards;
+}
+
+.lumi-reveal-title {
+  animation-delay: 0.35s;
+}
+
+.lumi-reveal-body {
+  animation-delay: 0.6s;
+}
+
+@keyframes lumi-text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lumi-glow {
+  0% {
+    opacity: 0.25;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-12px) scale(1.03);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0) scale(1);
+  }
+}

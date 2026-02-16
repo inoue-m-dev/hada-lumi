@@ -1,0 +1,19 @@
+fastapi            # Webフレームワーク本体
+uvicorn[standard]  # FastAPIを動かすASGIサーバー
+
+sqlalchemy         # ORM（DB操作用/非同期もこれでOK）
+asyncpg            # PostgreSQL用の非同期ドライバ
+
+alembic            # DBマイグレーション管理（テーブル追加・変更の履歴）
+
+python-dotenv      # .env から環境変数を読み込む
+pydantic           # リクエスト/レスポンスの型定義＆バリデーション
+
+redis[hiredis]     # Redisクライアント（キャッシュ用）
+httpx              # 外部API呼び出し用のHTTPクライアント（非同期対応）
+
+python-multipart   # ファイルアップロード等で必要になることが多い
+python-dateutil    # 日付計算（「過去7日」など）を楽にする
+
+openai             # OpenAI 公式Python SDK（AI分析用）
+firebase-admin     # Firebase Authトークン検証（バックエンド側）
