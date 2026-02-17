@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  # このワークフローは必要に応じて実装
+  # 現在はCI/CDのみ実装し、デプロイは手動で行う想定
+  deploy-notification:
+    name: Deploy Notification
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy notification
+        run: |
+          echo "Deploy workflow triggered for main branch"
+          echo "Backend and Frontend changes detected"
+          echo "Manual deployment may be required"
+
