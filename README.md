@@ -1,7 +1,7 @@
 # Hada Lumi
 
-[![Backend CI](https://github.com/Ino-12345/HadaLumi/actions/workflows/backend-ci.yml/badge.svg?branch=main)](https://github.com/Ino-12345/HadaLumi/actions/workflows/backend-ci.yml)
-[![Frontend CI](https://github.com/Ino-12345/HadaLumi/actions/workflows/frontend-ci.yml/badge.svg?branch=main)](https://github.com/Ino-12345/HadaLumi/actions/workflows/frontend-ci.yml)
+[![Frontend CI](https://github.com/inoue-m-dev/hada-lumi/actions/workflows/frontend-ci.yml/badge.svg?branch=main)](https://github.com/inoue-m-dev/hada-lumi/actions/workflows/frontend-ci.yml)
+[![Backend CI](https://github.com/inoue-m-dev/hada-lumi/actions/workflows/backend-ci.yml/badge.svg?branch=main)](https://github.com/inoue-m-dev/hada-lumi/actions/workflows/backend-ci.yml)
 
 肌状態と生活ログを記録し、AIで肌ゆらぎの原因を分析・可視化するWebアプリです。
 
@@ -22,6 +22,7 @@ https://hada-lumi.vercel.app/
 Googleログインが利用可能です。
 お手持ちのGoogleアカウントでログインしてください。
 
+---
 
 ## 🎥 デモ動画
 
