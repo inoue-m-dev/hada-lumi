@@ -17,10 +17,9 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "肌管理アプリ（仮）",
-  description: "毎日の肌状態を記録・分析するアプリ",
+  title: "Hada Lumi｜肌ログ・ゆらぎ分析",
+  description: "毎日の肌状態と生活ログを記録・分析するアプリ",
 };
-
 export default function RootLayout({
   children,
 }: {
